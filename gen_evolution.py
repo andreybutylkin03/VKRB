@@ -13,11 +13,11 @@ CROSSOVER_RATE = 0.9  # Вероятность скрещивания
 data = project_parser(5, 5, 20, 80)
 link, event_num = stand_parser(5, 5, data)
 offset_size = max([link.offset + link.num_file*event_num for link in link.values()])
-solve = Solve(data, event_num, link)
+solve = T(data, event_num, link)
 link_values = list(link.values())
 
 def objective_function(individual):
-    return solve.solve_simple(individual/2048) 
+    return solve.t_simple(individual/2048) 
 
 def mutate(individual, mutation_rate=MUTATION_RATE):
     if np.random.rand() < mutation_rate:

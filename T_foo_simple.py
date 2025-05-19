@@ -5,7 +5,7 @@ from heapq import *
 from data_simple import *
 
 
-class Solve:
+class T:
     def __init__(self, data: Data, event_num: np.int64, 
                  zero_link: dict[tuple[tuple[int, int], tuple[int, int]], Link]):
         self.data = data
@@ -215,7 +215,7 @@ class Solve:
 
         self.event_count += count_event
 
-    def solve_simple(self, pp: NDArray[np.float64]) -> np.float64:
+    def t_simple(self, pp: NDArray[np.float64]) -> np.float64:
         p = copy.deepcopy(pp)
 
         for i in np.arange(p.shape[0]):
